@@ -9,7 +9,7 @@ var url  = require('url');
 var PORT = 41205;
 
 // Load JSON file
-var file = JSON.parse(fs.readFileSync('favs.json','utf8'));
+var file = JSON.parse(fs.readFileSync('favs2.json','utf8'));
 
 var mime = {
   'html': 'text/html',
