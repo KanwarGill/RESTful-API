@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  
+  <script src="/js/jquery-1.10.2.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script src="/js/index.js"></script>
+    
+  <title>Twitters Favs API</title>
+</head>
+
+<body>
+  
+  <!-- navigation bar -->                                    
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+    <div class="container">
+      <div class="navbar-header">
+	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand" href="/">Twitter Favourites</a>
+      </div>
+      
+      
+      
+      <div class="collapse navbar-collapse navbar-ex1-collapse">          
+	<ul class="nav navbar-nav">                                       
+          <li><a class="view_tweets" title="Shows all tweets available in the archive">Home</a></li>                             
+          <li><a class="view_users" title="Shows all known twitter users included in the archive">Users</a></li>                       
+          <li><a class="view_extlinks" title="Shows list of all external links included in tweets from the archive">External links</a></li>                            <li><a class="view_location" title="Shows available locations of users">Location</a></li>                         
+	</ul>                                                             
+      </div>
+    </div>
+    
+  </nav>
+  <!-- /.navigation bar -->
+  
+  <div class="container"> 
+    <div id="main" class="list-group"></div>
+  </div>
+  
+  
+  <!-- templates -->
+  <script type="text/template" id="tweet-template">
+    
+    <div class="list-group-item tweet" id="{id}">
+      <a href="#" class="user clickable" id="{user.id}">
+	<img id="{user.id}" class="user profile_image_url thumbnail" src="{user.profile_image_url}" alt="{user.screen_name}"></img>
+      </a>
+      <a href="#" class="user clickable" id="{user.id}"> 
+	<h4 id="{user.id}" class="user list-group-item-heading">{user.screen_name}</h4>
+      </a>
+      <span class="created_at list-group-item-text">{created_at}</span>
+      <span class="text list-group-item-text">{text}</span>
+    </div>
+    
+  </script>
+  
+  <script type="text/template" id="user-template">
+    <div class="user list-group-item" id="{id}">
+     <a href="#" class="user clickable" id="{id}"> 
+       <img class="thumbnail profile_image_url" src="{profile_image_url}" alt="{screen_name}"></img>
+     </a>
+     <a href="#" class="user clickable" id="{id}">
+       <h4 class="list-group-item-heading">{screen_name}</h4>
+      </a>
+     <span class="location">{location}</span>
+     <span class="description">{description}</span>
+     <a href="{url}">{url}</a>
+    </div>
+  </script>
+  
+  <script type="text/template" id="extlink-template">
+    <div class="extlink list-group-item">
+     <a href="#" class="user clickable" id="{user_id}">
+       <img class="profile_image_url thumbnail" src="{profile_image_url}" alt="{screen_name}"></img>
+     </a>
+     <a href="#" class="user clickable" id="{user_id}">
+       <h4 class="list-group-item-heading">{screen_name}</h4>
+     </a>
+      <a class="url list-group-item-text" href="{expanded_url}">{display_url}</a>
+    </div>
+  </script>
+  
+
+    <script type="text/template" id="location-template">
+      <div class="extlink list-group-item">
+	<a href="#" class="user clickable" id="{user_id}">
+	  <img class="profile_image_url thumbnail" src="{profile_image_url}" alt="{screen_name}"></img>
+	</a>
+	<a href="#" class="user clickable" id="{user_id}">
+	  <h4 class="list-group-item-heading">{screen_name}</h4>
+	</a>
+	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="{url}&amp;output=embed">
+	</iframe>
+      </div>
+    </script>
+  
+    <!-- /. templates -->
+</body>
+</html>

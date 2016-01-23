@@ -1,0 +1,36 @@
+body { 
+    padding-top: 80px; 
+}
+.list-group-item {
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+} 
+.thumbnail {
+    float: left;
+}
+.created_at {
+    color: grey;
+    position:absolute;
+    width:250px;
+    height:20px;
+    top: 10px;
+    left: 400px;
+    font-size: 12px;
+}
+
+.view_tweets {
+    cursor: pointer;
+}
+
+.view_users {
+    cursor: pointer;
+}
+
+.view_extlinks {
+    cursor: pointer;
+}
+
+.view_location{
+    cursor:pointer;
+}
