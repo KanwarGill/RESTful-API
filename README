@@ -1,12 +1,3 @@
-#Assignment 1 of CSCC09
-
-Team:			
-
-Jason Lai 		
-Roland Pinto 		
-Kanwar Gill 		
-Aigerim Kussainova 
-
 To run the server, enter the following command on the terminal:
 
 node server.js
@@ -23,5 +14,3 @@ GET http://{hostname}:{port}/api/users			-- Returns (json) all known twitter use
 GET http://{hostname}:{port}/api/user?id= 		-- Returns (json) detailed profile information about a given twitter user
 GET http://{hostname}:{port}/api/extlinks			-- Returns (json) a list of all external links included in tweets from the archive
 GET http://{hostname}:{port}/api/location     		-- Returns (json) a list of google map location link pertaining to a user from the archive
-
-
